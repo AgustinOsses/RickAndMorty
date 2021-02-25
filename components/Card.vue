@@ -27,11 +27,9 @@ export default {
       character: []
     };
   },
-  created() {
-    axios.get(`${env.endPoint}/character/?page=3`).then(info => {
-      this.character = info.data.results;
-      console.log("laaaaaaaaaaaaaaaaaaaa", this.character);
-    });
+  async created() {
+    let info = await axios.get(`${env.endPoint}/character/?page=2`);
+    this.character = info.data.results;
   }
 };
 </script>
