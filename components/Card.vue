@@ -11,6 +11,9 @@
         >
           <b-card-text> Species: {{ person.species }} </b-card-text>
           <b-card-text> Status: {{ person.status }} </b-card-text>
+          <nuxt-link :to="`character/${person.id}`">
+            <b-button variant="outline-primary">Ver mas</b-button></nuxt-link
+          >
         </b-card>
       </div>
     </b-card-group>
@@ -19,18 +22,18 @@
 
 <script>
 import axios from "axios";
-import env from "../config/.env";
+import env from "../api/rickAndMorty.js";
 export default {
   name: "Principal",
   data() {
     return {
-      character: []
+      character: [],
     };
   },
   async created() {
-    let info = await axios.get(`${env.endPoint}/character/?page=2`);
+    let info = await axios.get(`${env.endPoint}/character/?page=15`);
     this.character = info.data.results;
-  }
+  },
 };
 </script>
 

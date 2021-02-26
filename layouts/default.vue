@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<style scoped>
-* {
+<style>
+body {
   background: linear-gradient(90deg, #7debff 1.49%, #5ddbf0 100%);
 }
 </style>
