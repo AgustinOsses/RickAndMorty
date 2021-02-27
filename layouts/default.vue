@@ -6,6 +6,7 @@
 
 <style>
 body {
-  background: linear-gradient(90deg, #7debff 1.49%, #5ddbf0 100%);
+  font-family: "Oxygen", sans-serif;
+  background-color: #24282f;
 }
 </style>

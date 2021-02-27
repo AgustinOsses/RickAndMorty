@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <b-card-group columns>
+    <b-card-group columns class="border-variant">
       <div v-for="person in character" :key="person.id">
         <b-card
           :title="person.name"
@@ -9,8 +9,6 @@
           img-top
           class="card"
         >
-          <b-card-text> Species: {{ person.species }} </b-card-text>
-          <b-card-text> Status: {{ person.status }} </b-card-text>
           <nuxt-link :to="`character/${person.id}`">
             <b-button variant="outline-primary">Ver mas</b-button></nuxt-link
           >
@@ -31,10 +29,14 @@ export default {
     };
   },
   async created() {
-    let info = await axios.get(`${env.endPoint}/character/?page=15`);
+    let info = await axios.get(`${env.endPoint}/character/?page=14`);
     this.character = info.data.results;
   },
 };
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.border {
+  border: 2px solid green;
+}
+</style>

@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "Navegation"
+  name: "Navegation",
 };
 </script>
 
